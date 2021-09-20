@@ -8,7 +8,8 @@ router.get('/', forwardAuthenticated, (req, res) => {
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
   res.render('dashboard', {
-    user: req.user
+    name: req.user.name,
+    email: req.user.email
   })
 );
 module.exports = router;
